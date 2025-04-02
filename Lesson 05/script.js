@@ -10,6 +10,7 @@ const confirmBtn = document.getElementById('confirm-upload-btn');
 const cancelBtn = document.getElementById('cancel-upload-btn');
 const addressForm = document.getElementById('update-address-form');
 const editAddressBtn = document.getElementById('edit-address-btn');
+const saveAddressBtn = document.getElementById('save-address-btn');
 const cancelAddressBtn = document.getElementById('cancel-edit-btn');
 const messageBox = document.getElementById('response-message');
 
@@ -129,19 +130,20 @@ cancelBtn.addEventListener('click', () => {
 
 // Edit Address
 editAddressBtn.addEventListener('click', () => {
-  toggleAddressInputs(false);
-  cancelAddressBtn.classList.remove('d-none');
-  editAddressBtn.classList.add('d-none');
-});
-
-// Cancel address edit
-cancelAddressBtn.addEventListener('click', () => {
-  fillAddressFields(originalAddressData);
-  toggleAddressInputs(true);
-  cancelAddressBtn.classList.add('d-none');
-  editAddressBtn.classList.remove('d-none');
-});
-
+    toggleAddressInputs(false);
+    saveAddressBtn.classList.remove('d-none');
+    cancelAddressBtn.classList.remove('d-none');
+    editAddressBtn.classList.add('d-none');
+  });
+  
+  // Cancel address edit
+  cancelAddressBtn.addEventListener('click', () => {
+    fillAddressFields(originalAddressData);
+    toggleAddressInputs(true);
+    saveAddressBtn.classList.add('d-none');
+    cancelAddressBtn.classList.add('d-none');
+    editAddressBtn.classList.remove('d-none');
+  });
 // Enter Code Block 04 here
 
 
