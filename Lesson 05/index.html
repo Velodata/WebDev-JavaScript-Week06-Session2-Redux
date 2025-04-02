@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 05 - Upload Avatar & Edit Address</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+  <h2 class="mb-0">Lesson 05 - Upload Avatar and Edit Address</h2>
+  <h4 class="text-muted mb-4">Try ID #6 or perhaps ID #16</h4>
+
+  <!-- Fetch User ID Form -->
+  <form id="fetch-user-form" class="row g-3 mb-4">
+    <div class="col-md-4">
+      <input type="number" id="user-id" class="form-control" placeholder="Enter User ID" required />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Fetch User</button>
+    </div>
+  </form>
+
+  <!-- Avatar Section -->
+  <div class="card p-4 mb-4" id="avatar-section" style="max-width: 600px;">
+    <h5>Profile Image</h5>
+    <!-- <img id="profile-image" src="https://via.placeholder.com/100x100?text=No+Image" alt="Profile" class="img-thumbnail mb-3" style="max-height: 100px;"> -->
+    <img id="profile-image"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Default_pfp.jpg/160px-Default_pfp.jpg"
+    alt="Profile Image"
+    class="img-thumbnail"
+    style="width: 160px;" />
+
+    
+    <div class="d-flex gap-2 mb-2">
+      <button type="button" id="start-upload-btn" class="btn btn-secondary d-none">Upload New Avatar</button>
+      <button type="button" id="confirm-upload-btn" class="btn btn-success d-none">Confirm Upload</button>
+      <button type="button" id="cancel-upload-btn" class="btn btn-outline-danger d-none">Cancel</button>
+    </div>
+    <input type="file" id="image-input" accept="image/*" class="form-control d-none"/>
+  </div>
+
+  <!-- Address Section -->
+  <form id="update-address-form" class="row g-3 d-none" style="max-width: 600px;">
+    <h5>Address Information</h5>
+
+    <div class="col-12">
+      <label for="address_1" class="form-label">Address 1</label>
+      <input type="text" id="address_1" class="form-control" disabled />
+    </div>
+    <div class="col-12">
+      <label for="address_2" class="form-label">Address 2</label>
+      <input type="text" id="address_2" class="form-control" disabled />
+    </div>
+    <div class="col-12">
+      <label for="address_3" class="form-label">Address 3</label>
+      <input type="text" id="address_3" class="form-control" disabled />
+    </div>
+    <div class="col-6">
+      <label for="city" class="form-label">City</label>
+      <input type="text" id="city" class="form-control" disabled />
+    </div>
+    <div class="col-3">
+      <label for="state" class="form-label">State</label>
+      <input type="text" id="state" class="form-control" disabled />
+    </div>
+    <div class="col-3">
+      <label for="postcode" class="form-label">Postcode</label>
+      <input type="text" id="postcode" class="form-control" disabled />
+    </div>
+
+    <div class="col-12 d-flex gap-2">
+      <button type="button" id="edit-address-btn" class="btn btn-warning">Edit User Address Data</button>
+      <button type="submit" class="btn btn-success d-none">Save</button>
+      <button type="button" id="cancel-edit-btn" class="btn btn-outline-secondary d-none">Cancel</button>
+    </div>
+  </form>
+
+  <!-- Response Message -->
+  <div id="response-message" class="mt-4"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
